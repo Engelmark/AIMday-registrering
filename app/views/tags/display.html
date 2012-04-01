@@ -1,0 +1,21 @@
+*{ Display a Question in one of these modes:'home' or 'teaser' }*
+ 
+<div class="Question ${_as == 'teaser' ? 'teaser' : ''}">
+    
+    <h2 class="Question-title">
+    	<a href="@{Application.show(_Question.id)}">${_Question.title}</a>
+	</h2>
+
+
+    <div class="Question-metadata">
+        <span class="Question-author">by ${_Question.author.fullname}</span>,
+        <span class="Question-date">${_Question.postedAt.format('dd MMM yy')}</span>
+    </div>
+    #{if _as != 'teaser'}
+        <div class="Question-background">
+            <div class="about">Detail: </div>
+            ${_Question.background.nl2br()}
+        </div>
+    #{/if}
+</div>
+ 

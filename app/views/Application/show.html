@@ -1,0 +1,25 @@
+#{extends 'main.html' /}
+#{set title:question.title /}
+ 
+#{display Question:question, as:'home' /}
+
+<h3>Post a question</h3>
+ 
+#{form @Application.postQuestion(conference.id)}
+    <p>
+        <label for="author">Your name: </label>
+        <input type="text" name="author" id="author" />
+    </p>
+    <p>
+        <label for="title">Question </label>
+        <input type="text" name="title" id="title" />
+    </p>
+    	
+    <p>
+        <label for="background">Question Background </label>
+        <textarea name="background" id="background"></textarea>
+    </p>
+    <p>
+        <input type="submit" value="Submit your question" />
+    </p>
+#{/form}

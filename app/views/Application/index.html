@@ -1,0 +1,23 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+ 
+
+#{if frontQuestion.size() > 0}
+    
+	<div class="all-Questions">
+    	<h3>Questions <span class="from">from the industry</span></h3>
+        
+        #{list items:frontQuestion, as:'oneQuestion'}
+        #{display Question:oneQuestion, as:'teaser' /}
+        #{/list}
+    </div>
+        
+#{/if}
+    
+
+ 
+#{else}
+    <div class="empty">
+        There is currently nothing to read here.
+    </div>
+#{/else}
