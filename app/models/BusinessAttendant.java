@@ -20,5 +20,5 @@ public class BusinessAttendant extends Model {
         this.phonenumber = phonenumber;
         this.company = company;
     }
-// SLUTA TRAMSA STINA 
+// SLUTA TRAMSA STINA MM
 }
