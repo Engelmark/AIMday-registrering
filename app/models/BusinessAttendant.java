@@ -18,7 +18,7 @@ public class BusinessAttendant extends Model {
     	this.email = email;
         this.fullname = fullname;
         this.phonenumber = phonenumber;
-        this.company = company;
+        this.company = compani;
     }
  
 }
