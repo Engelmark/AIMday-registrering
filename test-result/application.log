@@ -1,5 +1,0 @@
-30 mar 2012 12:55:29,210 INFO  ~ Starting C:\play-1.2\AIMday
-30 mar 2012 12:55:30,337 WARN  ~ You're running Play! in DEV mode
-30 mar 2012 12:55:30,664 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
-30 mar 2012 12:55:50,670 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0
-30 mar 2012 12:55:53,022 INFO  ~ Application 'AIMday' is now started !
