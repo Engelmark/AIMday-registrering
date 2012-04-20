@@ -1,0 +1,11 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+
+Namn = Namn
+Datum = Datum (YYYY-MM-DD)
+Plats = Plats
+MaxAntalFragor = Max antal frågor
+DeadlineForetag = Slutdatum företagsregistrering
+RegistreringsoppningForskare = Startdatum forskarregistrering
+DeadlineForskare = Slutdatum forskarregistrering

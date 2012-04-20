@@ -1,0 +1,70 @@
+﻿# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+Conference(Admin):
+    Namn:            Admin
+    Datum:           tjugonde maj tvåtusentolv
+    Plats:           Uppsala
+    username:        admin
+    password:        admin
+    isAdmin:         true
+    urlEnding:       aimdayadmin
+   
+Conference(Cancer):
+    Namn:            Cancer
+    Datum:           tjugonde maj tvåtusentolv
+    Plats:           Lund
+    username:        cancer
+    password:        cancer
+    urlEnding:       cancer2012
+    
+BusinessAttendant(bob):
+    email:          bob@gmail.com
+    fullname:       Bob
+    phonenumber:    0735347484
+    company:        Builder Bob
+    conference:     Cancer
+    acceptEnglish:  true
+    
+BusinessAttendant(jeff):
+    email:          jeff@gmail.com
+    fullname:       Jeff Jefferson
+    phonenumber:    07568124547
+    company:        Jeff's administration
+    conference:     Admin
+    acceptEnglish:  false
+       
+Question(firstBobQuestion):
+    title:          Bobs first question (the title)
+    postedAt:       2009-03-25
+    author:         bob
+    conference:     Cancer
+    question:       Bobs first question
+    background:     >
+                    Some background about the first question
+    
+Question(secondBobQuestion):
+    title:          Bobs second question (the title)
+    postedAt:       2009-06-14
+    author:         bob
+    conference:     Cancer
+    question:       Bobs second question
+    background:     >
+                    Some background about the second question
+
+                    
+Question(jeffPost):
+    title:          The MVC application
+    postedAt:       2009-06-06
+    author:         jeff
+    conference:     Admin
+    background:     >
+                    A Play! application follows the MVC architectural pattern as applied to the 
+                    architecture of the Web.
+                    
+                    This pattern splits the application into separate layers: the Presentation 
+                    layer and the Model layer. The Presentation layer is further split into a 
+                    View and a Controller layer.
+                    
+
+                 

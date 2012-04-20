@@ -1,0 +1,62 @@
+#{extends 'main.html' /}
+#{set title:'next' /}
+
+
+
+#{list items:conference.businessAttendants, as:'businessAttendant'}
+	
+		<div class="businessAttendant">
+                    <b class="businessAttendant-fullname">
+       <label for="author">Author:     </label> <a "@{Application.show(businessAttendant)}">${businessAttendant.fullname}</a></br>
+        <label for="company">Company: </label>    			<class="businessAttendant-company"><a>${businessAttendant.company}</a>
+					
+#{/list}                        
+  	 </p>
+  	 #{form @Application.postQuestion(conference.id)}
+	
+	<form method="post" action="">
+	<p>
+		<label for="title">Title:</label>
+		<textarea name="title"></textarea> <br>
+		*{}<input type="text" name="title" id="title" />}*
+    </p>
+
+	<form method="post" action="">
+	<p>
+		<label for="question">Question:</label>
+		<textarea name="question" cols="40" rows="5"></textarea> <br>
+
+       
+    <form method="post" action="">
+    <p>
+    	<label for="background">Background:</label>
+		<textarea name="background" cols="40" rows="5"></textarea <br>
+
+    <p>  
+		<label for="openToOthers">Accept attendants from other companies: </label>
+		<input type="checkbox" name="openToOthers" value="true" />Yes <br />    
+    </p>
+
+    <p>
+        <input type="submit" value="Submit question" />
+    </p>
+#{/form}
+</br>
+</br>
+
+#{form @uploadFile(), enctype:'multipart/form-data'}
+    
+    
+    <input type="file" id="text" name="pdf" />
+    <input type="submit" value="Upload file" />
+#{/}
+
+
+
+  <p>#{form @Application.finishRegistration(conference.id)}
+        <input type="submit" value="Finish registration" />
+    </p>
+    
+    #{/}
+    				
+		

@@ -1,0 +1,18 @@
+#{extends 'admin.html' /}
+ 
+#{ifnot conference?.id}
+    <h3>Write, <span>a new conference</span></h3>
+#{/ifnot}
+#{else}
+    <h3>Edit, <span>this conference</span></h3>
+#{/else}
+ 
+#{form @save(conference?.id)}
+
+	#{ifErrors}
+        <p class="error">
+            Please correct these errors.
+        </p>
+    #{/ifErrors}
+     
+  

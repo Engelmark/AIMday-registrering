@@ -1,0 +1,23 @@
+#{extends 'admin.html' /}
+
+*{Välkommen! ${Conference}}*
+<h3>Welcome ${conference.Namn}
+
+
+
+ 
+*{#{list items:conferences, as:'conference'}
+    <p class="conference ${conference_parity}">
+        <a href="@{form(conference.id)}">${conference.Namn}</a>
+    </p>
+#{/list}}*
+
+#{list items:conference, as:'conference'}
+
+    <p class="conference ${conference_parity}">
+
+        ${conference.Namn} i/på ${conference.Plats} 
+
+    </p>
+
+#{/list}

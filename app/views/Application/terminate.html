@@ -1,0 +1,52 @@
+<h3>Your registration is now complete!</h3></br>
+    The following information has been registred in the database.
+</br>
+</br>
+#{list items:conference.businessAttendants, as:'businessAttendant'}
+	
+		<div class="businessAttendant">
+                    <b class="businessAttendant-fullname">
+                        <a "@{Application.show(businessAttendant)}">${businessAttendant.fullname}</a></br>
+                    </b>
+                    <class="businessAttendant-email">
+                    <a>${businessAttendant.email}</a></br>
+					<class="businessAttendant-phonenumber">
+					<a>${businessAttendant.phonenumber}</a>
+					<class="businessAttendant-company"></br>
+					<a>${businessAttendant.company}</a>
+					<class="businessAttendant-acceptEnglish"></br>
+					<a>${businessAttendant.acceptEnglish}</a>
+					
+		</div>
+	#{/list}
+	</br>
+	</br>
+	A confirmation email has been sent to <a>${businessAttendant.email}</a></br> Just kidding, this isnt working yet!'
+					<class="businessAttendant-email">
+					*{Det här blir fel, mailet ska skickas till den första som registreras sig. I nuläget skickas det till co-worker}*
+					
+					
+				#{if conference.questions.size()}
+	#{list items:conference.questions, as:'Question'}    
+	
+		<div class="Question">
+                    <b class="Question-title">
+                    <a>${Question.title}</a></br></b>   
+                    
+                    <class="Question-question">
+                    <a>${Question.question}</a></br>             
+                    
+                    <class="Question-background">
+                    <a>${Question.background}</a></br> 
+
+                	<class="Question-openToOthers">
+                    <a>${Question.openToOthers}</a></br>
+                    
+                    <class="Question-author">
+                    <a>${Question.author}</a></br>
+                        
+                        
+                        	</div>
+	#{/list}
+	
+#{/if}

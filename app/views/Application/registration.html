@@ -1,0 +1,39 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+ 
+
+#{form @Application.postBusinessAttendant(conference.id)}
+    <p>
+        
+        <label for="fullname">Name:     </label>
+        
+        <input type="text" name="fullname" id="fullname" />
+    </p>
+    <p>
+        <label for="email">E-mail:          </label>
+        <input type="text" name="email" id="email" />
+    </p>
+    	
+    <p>
+        <label for="phonenumber">Phonenumber:  </label>
+        <input type="text" name="phonenumber" id="phonenumber" />
+    </p>
+    <p>
+        <label for="company">Company:      </label>
+        <input type="text" name="company" id="company" />
+    </p>
+
+    <p>  
+		<label for="acceptEnglish">Accept english in my workshops: </label>
+		<input type="checkbox" name="acceptEnglish" value="true" />Yes <br />    
+    </p>
+    <p>
+        <input type="submit" value="Submit attendant" />
+    </p>
+#{/form}
+
+
+#{form @Application.page(conference.id)}
+
+<input type="submit" value="Submit question" />
+#{/form}

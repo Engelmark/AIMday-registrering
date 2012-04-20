@@ -1,0 +1,31 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Application.index
+GET		/conference/{id}						Application.show
+GET 	/conference/{id}/page					Application.page
+GET     /conference/{id}/page/terminate			Application.terminate
+GET		/registration/{urlEnding}				Application.registration
+
+#/conference/{id} utbytt
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Import CRUD routes
+*      /							              module:crud
+
+# Import Secure routes
+*       /                                       module:secure
+
+
+GET     /	     module:*
+
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}

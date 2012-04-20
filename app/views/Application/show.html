@@ -1,0 +1,59 @@
+#{extends 'main.html' /}
+#{set title:'Page 2' /}
+*{#{set fullname:businessAttendant.name /}
+ 
+#{display Question:question, as:'home' /}}*
+
+
+
+	
+
+#{if conference.businessAttendants.size()}
+	#{list items:conference.businessAttendants, as:'businessAttendant'}
+	
+		<div class="businessAttendant">
+                    <b class="businessAttendant-fullname">
+                        <a "@{Application.show(businessAttendant)}">${businessAttendant.fullname}</a></br>
+                    </b>
+                    <class="businessAttendant-email">
+                    <a>${businessAttendant.email}</a></br>
+					<class="businessAttendant-phonenumber">
+					<a>${businessAttendant.phonenumber}</a>
+					<class="businessAttendant-company"></br>
+					<a>${businessAttendant.company}</a>
+					
+		</div>
+	#{/list}
+#{/if}
+
+ <h3>Register co-worker<h3>
+#{form @Application.postBusinessAttendant(conference.id)}
+    <p>
+        <label for="fullname"> name:     </label>
+        <input type="text" name="fullname" id="fullname" />
+    </p>
+    <p>
+        <label for="email">E-mail:          </label>
+        <input type="text" name="email" id="email" />
+    </p>
+    
+    <p>
+        <label for="phonenumber">Phonenumber:  </label>
+        <input type="text" name="phonenumber" id="phonenumber" />
+    </p>
+    <p>
+        <label for="company">Company:      </label>
+        <input type="text" name="company" id="company" />
+    </p>
+      
+    
+    <p>
+        <input type="submit" value="Submit attendant" />
+    </p>
+#{/form}
+#{form @Application.page(conference.id)}
+
+<input type="submit" value="Submit question" />
+#{/form}
+
+
