@@ -3,7 +3,13 @@ package models;
 import java.util.*;
 import javax.persistence.*;
 import java.io.File;
+import javax.persistence.*;
+
+import play.db.jpa.*;
+import play.db.jpa.Blob;
+import play.db.jpa.Model;
  
+import javax.persistence.Entity;
 import play.db.jpa.*;
  
 @Entity
@@ -12,7 +18,10 @@ public class Question extends Model {
     public String title;
     public Date postedAt;
     public boolean openToOthers;
-    //public Document doc;
+    public String filename;
+    
+    public Blob file; 
+    
     
     //@ManyToOne
     @Column(name="author",length=1000)

@@ -4,7 +4,11 @@ import java.util.*;
 import javax.persistence.*;
  
 import play.db.jpa.*;
+import play.db.jpa.Blob;
+import play.db.jpa.Model;
  
+import javax.persistence.Entity;
+
 @Entity
 
 public class BusinessAttendant extends Model {
@@ -14,6 +18,8 @@ public class BusinessAttendant extends Model {
     public String phonenumber;
     public String company;
     public boolean acceptEnglish;
+    
+    
     @ManyToOne
     public Conference conference;
     
@@ -25,5 +31,5 @@ public class BusinessAttendant extends Model {
         this.company = company;
         this.acceptEnglish = acceptEnglish;
     }
- 
+    
 }

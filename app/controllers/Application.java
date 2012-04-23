@@ -2,7 +2,14 @@ package controllers;
 
 import play.*;
 import play.mvc.*;
-
+import java.util.*;
+import javax.persistence.*;
+ 
+import play.db.jpa.*;
+import play.db.jpa.Blob;
+import play.db.jpa.Model;
+ 
+import javax.persistence.Entity;
 import java.io.File;
 import java.util.*;
 
@@ -96,7 +103,11 @@ public class Application extends Controller {
    		conference.addQuestion(background,title,question,author,openToOthers);
    		terminate(conferenceId);
    }
-   public static void uploadFile(){
+   public static void questionuploadFile(Question question) {
+	   question.save();
+	   System.out.println(question.file);
 	   
-   }
+	  
+	}
+
 }

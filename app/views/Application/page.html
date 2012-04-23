@@ -44,12 +44,11 @@
 </br>
 </br>
 
-#{form @uploadFile(), enctype:'multipart/form-data'}
-    
-    
-    <input type="file" id="text" name="pdf" />
-    <input type="submit" value="Upload file" />
-#{/}
+#{form @Application.questionuploadFile(), enctype:'multipart/form-data'}
+   <input type="file" name="question.file">
+   <input type="submit" name="submit" value="Upload file">
+#{/form}
+
 
 
 
